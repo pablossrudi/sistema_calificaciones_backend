@@ -54,7 +54,7 @@
 
 #### `POST` /api/auth/register
 
->A esta ruta pude acceder cualquier persona
+>A esta ruta solo pueden acceder los usuarios con el rol `ROLE_ADMIN`
 
 **Descripción:** registra usuario.
 
