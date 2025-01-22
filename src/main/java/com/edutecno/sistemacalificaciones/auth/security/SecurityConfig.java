@@ -42,7 +42,8 @@ public class SecurityConfig {
                         })
                 )
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/auth/login").permitAll()
+                        .requestMatchers("/api/auth/register").hasAuthority("ROLE_ADMIN")
                         .requestMatchers("/hash-password").permitAll()
                         .requestMatchers("/api/users/{userId}").hasAuthority("ROLE_ADMIN")
                         .requestMatchers("/api/users").hasAnyAuthority("ROLE_ADMIN", "ROLE_CLIENT")
